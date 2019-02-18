@@ -31,7 +31,6 @@ export default class Converter extends Component {
       axios.get('http://data.fixer.io/api/latest?access_key=2aaaf5a3cd4143bc54def47f80c91d08&symbols=USD,EUR,TRY,CAD,JPY,CUP')
         .then(response => response.data)
         .then(data => {
-            console.log(data.rates);
             const rates = data.rates;
             this.setState({
                 rates
@@ -74,7 +73,6 @@ export default class Converter extends Component {
     
 
     render () {
-        console.log(this.state)
         const {wrapper, inputStyle, textStyle, submitButton, submitButtonText, clearButton} = styles;
         const {usd, tl, cad, jpy, cup, input} = this.state;
         return (
